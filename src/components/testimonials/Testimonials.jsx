@@ -8,8 +8,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-// import required modules
-import { Pagination } from "swiper";
+// Import required module directly from swiper/modules
+import { Pagination } from "swiper/modules";
 
 const Testimonials = () => {
   return (
