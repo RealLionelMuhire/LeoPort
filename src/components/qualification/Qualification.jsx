@@ -79,7 +79,7 @@ const Qualification = () => {
                 ML Corporate Services - Rwanda
                 </span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> Jul 2022 - May 2023
+                  <i className="uil uil-calendar-alt"></i> Sep 2023 - Dec 2023
                 </div>
                 
               </div>
@@ -114,7 +114,7 @@ const Qualification = () => {
                 ALX Africa - Rwanda
                 </span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> Jun 2023 - Sep 2023
+                  <i className="uil uil-calendar-alt"></i> Nov 2022 - Jan 2024
                 </div>
               </div>
             </div>
