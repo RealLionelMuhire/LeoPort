@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
-
-// import data
-import { projectsData } from "./Data";
-import { projectsNav } from "./Data";
-
-// import components
+import { projectsData, projectsNav } from "./Data";
 import WorkItems from "./WorkItems";
 
 const Projects = () => {
@@ -13,13 +8,13 @@ const Projects = () => {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-    // get projects based on item
+    // filter projects based on the category
     if (item.name === "all") {
       setProjects(projectsData);
     } else {
-      const newProjects = projectsData.filter((project) => {
-        return project.category.toLowerCase() === item.name;
-      });
+      const newProjects = projectsData.filter((project) =>
+        project.category.toLowerCase().includes(item.name)
+      );
       setProjects(newProjects);
     }
   }, [item]);
@@ -31,27 +26,24 @@ const Projects = () => {
 
   return (
     <div>
-      {/* projects nav */}
-      <div class="work__filters">
-        {projectsNav.map((item, index) => {
-          return (
-            <span
-              onClick={(e) => {
-                handleClick(e, index);
-              }}
-              className={`${active === index ? "active-work" : ""} work__item`}
-              key={index}
-            >
-              {item.name}
-            </span>
-          );
-        })}
+      {/* Projects navigation */}
+      <div className="work__filters">
+        {projectsNav.map((navItem, index) => (
+          <span
+            onClick={(e) => handleClick(e, index)}
+            className={`${active === index ? "active-work" : ""} work__item`}
+            key={index}
+          >
+            {navItem.name}
+          </span>
+        ))}
       </div>
-      {/* projects */}
+
+      {/* Projects display */}
       <div className="work__container container grid">
-        {projects.map((item) => {
-          return <WorkItems item={item} key={item.id} />;
-        })}
+        {projects.map((project) => (
+          <WorkItems item={project} key={project.id} />
+        ))}
       </div>
     </div>
   );

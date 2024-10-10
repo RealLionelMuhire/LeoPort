@@ -15,7 +15,9 @@ const Contact = () => {
         form.current,
         "vxDcl4UI2jbOQBn6f"
       )
-      e.target.reset()
+      .then(() => {
+        e.target.reset();
+      });
   };
 
   return (
@@ -32,10 +34,10 @@ const Contact = () => {
               <i className="bx bx-mail-send contact__card-icon"></i>
 
               <h3 className="contact__card-title">Email</h3>
-              <span className="contact__card-data">user@gmail.com</span>
+              <span className="contact__card-data">muhirelionel@gmail.com</span>
 
               <a
-                href="mailto:examplemail@gmail.com.com"
+                href="mailto:muhirelionel@gmail.com"
                 className="contact__button"
               >
                 Write me{" "}
@@ -47,24 +49,14 @@ const Contact = () => {
               <i className="bx bxl-whatsapp contact__card-icon"></i>
 
               <h3 className="contact__card-title">Whatsapp</h3>
-              <span className="contact__card-data">999-888-777</span>
+              <span className="contact__card-data">+250784863317</span>
 
               <a
-                href="https://api.whatsapp.com/send?phone=62214408789&text=Hello, more information!"
+                href="https://api.whatsapp.com/send?phone=250784863317&text=Hello, more information!"
                 className="contact__button"
+                target="_blank" 
+                rel="noopener noreferrer"
               >
-                Write me{" "}
-                <i className="bx bx-right-arrow-alt contact__button-icon"></i>
-              </a>
-            </div>
-
-            <div className="contact__card">
-              <i className="bx bxl-messenger contact__card-icon"></i>
-
-              <h3 className="contact__card-title">Messenger</h3>
-              <span className="contact__card-data">user.fb123</span>
-
-              <a href="https://m.me/crypticalcoder" className="contact__button">
                 Write me{" "}
                 <i className="bx bx-right-arrow-alt contact__button-icon"></i>
               </a>
@@ -110,7 +102,7 @@ const Contact = () => {
             <button className="button button--flex">
               Send Message
               <svg
-                class="button__icon"
+                className="button__icon"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
