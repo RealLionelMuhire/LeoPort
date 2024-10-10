@@ -4,27 +4,39 @@ const Social = () => {
   return (
     <div className="home__social">
       <a
-        href="https://www.instagram.com/"
+        href="https://www.linkedin.com/in/lionel-muhire/"
         className="home__social-icon"
         target="_blank"
+        rel="noreferrer"
       >
-        <i className="uil uil-instagram"></i>
+        <i className="uil uil-linkedin"></i>
       </a>
 
       <a
-        href="https://dribbble.com/"
+        href="https://github.com/RealLionelMuhire/"
         className="home__social-icon"
         target="_blank"
-      >
-        <i className="uil uil-dribbble"></i>
-      </a>
-
-      <a
-        href="https://github.com/"
-        className="home__social-icon"
-        target="_blank"
+        rel="noreferrer"
       >
         <i className="uil uil-github-alt"></i>
+      </a>
+
+      <a
+        href="https://x.com/lionelmuhire_sr/"
+        className="home__social-icon"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <i className="uil uil-x"></i>
+      </a>
+
+      <a
+        href="https://www.instagram.com/lionelmuhire_sr/"
+        className="home__social-icon"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <i className="uil uil-instagram"></i>
       </a>
     </div>
   );
