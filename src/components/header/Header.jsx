@@ -14,6 +14,11 @@ const Header = () => {
   const [Toggle, showMenu] = useState(false);
   const [activeNav, setActiveNav] = useState("#home");
 
+  const handleNavClick = (nav) => {
+    setActiveNav(nav);
+    showMenu(false); // Close the menu after clicking
+  };
+
   return (
     <header className="header">
       <nav className="nav container">
@@ -26,7 +31,7 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#home"
-                onClick={() => setActiveNav("#home")}
+                onClick={() => handleNavClick("#home")}
                 className={
                   activeNav === "#home" ? "nav__link active-link" : "nav__link"
                 }
@@ -38,7 +43,7 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#about"
-                onClick={() => setActiveNav("#about")}
+                onClick={() => handleNavClick("#about")}
                 className={
                   activeNav === "#about" ? "nav__link active-link" : "nav__link"
                 }
@@ -50,7 +55,7 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#skills"
-                onClick={() => setActiveNav("#skills")}
+                onClick={() => handleNavClick("#skills")}
                 className={
                   activeNav === "#skills"
                     ? "nav__link active-link"
@@ -64,7 +69,7 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#services"
-                onClick={() => setActiveNav("#services")}
+                onClick={() => handleNavClick("#services")}
                 className={
                   activeNav === "#services"
                     ? "nav__link active-link"
@@ -78,7 +83,7 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#portfolio"
-                onClick={() => setActiveNav("#portfolio")}
+                onClick={() => handleNavClick("#portfolio")}
                 className={
                   activeNav === "#portfolio"
                     ? "nav__link active-link"
@@ -92,7 +97,7 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#contact"
-                onClick={() => setActiveNav("#contact")}
+                onClick={() => handleNavClick("#contact")}
                 className={
                   activeNav === "#contact"
                     ? "nav__link active-link"

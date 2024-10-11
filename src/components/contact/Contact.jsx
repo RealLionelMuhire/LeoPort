@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import "./contact.css";
 
 const Contact = () => {
@@ -10,14 +10,22 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_x1hewh5",
-        "template_2ki8hlo",
+        "service_q4noi3u",           // Your Service ID
+        "template_2j88tvf",          // Your Template ID
         form.current,
-        "vxDcl4UI2jbOQBn6f"
+        "wAv1NA5rMqQpLbnhz"          // Your Public Key (User ID)
       )
-      .then(() => {
-        e.target.reset();
-      });
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert('Message Sent Successfully!');
+        },
+        (error) => {
+          console.log(error.text);
+          alert('An error occurred, please try again.');
+        }
+      );
+    e.target.reset(); // This will reset the form after submission
   };
 
   return (
@@ -75,6 +83,7 @@ const Contact = () => {
                 name="name"
                 className="contact__form-input"
                 placeholder="Insert your name"
+                required
               />
             </div>
 
@@ -85,6 +94,7 @@ const Contact = () => {
                 name="email"
                 className="contact__form-input"
                 placeholder="Insert your email"
+                required
               />
             </div>
 
@@ -96,10 +106,11 @@ const Contact = () => {
                 rows="10"
                 className="contact__form-input"
                 placeholder="Write your project"
+                required
               ></textarea>
             </div>
 
-            <button className="button button--flex">
+            <button className="button button--flex" type="submit">
               Send Message
               <svg
                 className="button__icon"
